@@ -1,4 +1,2 @@
 <?php
-echp "kim";
-
-?>
+echo "Hello LINE BOT";

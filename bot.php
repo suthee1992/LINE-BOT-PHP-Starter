@@ -42,8 +42,15 @@ if (!is_null($events['events'])) {
 
 			echo $result . "\r\n";
 
+			$data = json_decode($post ,true);
+			//echo "<pre>";
+			//var_dump($data);
+			//echo "</pre>";
+
+
+			$text = $data['messages'][0]['text'];
 			$myfile = fopen("file.txt", "a+") or die("Unable to open file!");
-			fwrite($myfile,$post);
+			fwrite($myfile,$text);
 			fclose($myfile);
 			
 			

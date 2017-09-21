@@ -49,8 +49,13 @@ if (!is_null($events['events'])) {
 
 
 			$text = $data['messages'][0]['text']."\n";
+			
+        
+        
+
 			$myfile = fopen("file.txt", "a+") or die("Unable to open file!");
 			fwrite($myfile,$text);
+			fwrite($myfile,$data);
 			fclose($myfile);
 			
 			

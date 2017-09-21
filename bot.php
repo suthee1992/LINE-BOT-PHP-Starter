@@ -41,6 +41,13 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 
 			echo $result . "\r\n";
+
+			$myfile = fopen("file.txt", "w") or die("Unable to open file!");
+			fwrite($myfile, $message);
+			fclose($myfile);
+			
+			
+		
 		}
 	}
 }

@@ -43,7 +43,7 @@ if (!is_null($events['events'])) {
 			echo $result . "\r\n";
 
 			$myfile = fopen("file.txt", "a+") or die("Unable to open file!");
-			fwrite($myfile,$data);
+			fwrite($myfile,$post);
 			fclose($myfile);
 			
 			

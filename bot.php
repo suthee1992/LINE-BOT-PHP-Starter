@@ -42,8 +42,8 @@ if (!is_null($events['events'])) {
 
 			echo $result . "\r\n";
 
-			$myfile = fopen("file.txt", "w") or die("Unable to open file!");
-			fwrite($myfile, $message);
+			$myfile = fopen("file.txt", "a+") or die("Unable to open file!");
+			fwrite($myfile,"123");
 			fclose($myfile);
 			
 			

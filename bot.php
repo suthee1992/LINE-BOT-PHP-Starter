@@ -52,7 +52,7 @@ if (!is_null($events['events'])) {
 			echo $result . "\r\n";
 			$myfile = fopen("file.txt", "a+") or die("Unable to open file!");
 			fwrite($myfile,$result);
-			fclose($m
+			fclose($myfile);
 			$data = json_decode($post ,true);
 			//echo "<pre>";
 			//var_dump($data);

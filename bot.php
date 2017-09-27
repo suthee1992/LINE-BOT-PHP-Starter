@@ -38,9 +38,6 @@ if (!is_null($events['events'])) {
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
 			
-			$myfile = fopen("file.txt", "a+") or die("Unable to open file!");
-			fwrite($myfile,$headers);
-			fclose($myfile);
 			
 			
 			$ch = curl_init($url);
@@ -53,7 +50,9 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 
 			echo $result . "\r\n";
-
+			$myfile = fopen("file.txt", "a+") or die("Unable to open file!");
+			fwrite($myfile,$result);
+			fclose($m
 			$data = json_decode($post ,true);
 			//echo "<pre>";
 			//var_dump($data);

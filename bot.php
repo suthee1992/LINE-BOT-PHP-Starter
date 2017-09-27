@@ -33,13 +33,16 @@ if (!is_null($events['events'])) {
 				'messages' => [$messages],
 			];
 			$post = json_encode($data);
-			$myfile = fopen("file.txt", "a+") or die("Unable to open file!");
-			fwrite($myfile,$data);
-			fclose($myfile);
 		
 			
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
+			
+			$myfile = fopen("file.txt", "a+") or die("Unable to open file!");
+			fwrite($myfile,$headers);
+			fclose($myfile);
+			
+			
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

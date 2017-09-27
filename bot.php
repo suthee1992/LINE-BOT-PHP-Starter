@@ -24,10 +24,7 @@ if (!is_null($events['events'])) {
 
 		
 
-			$myfile = fopen("file.txt", "a+") or die("Unable to open file!");
-			fwrite($myfile,$messages);
-			fclose($myfile);
-		
+			
 			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
@@ -36,6 +33,11 @@ if (!is_null($events['events'])) {
 				'messages' => [$messages],
 			];
 			$post = json_encode($data);
+			$myfile = fopen("file.txt", "a+") or die("Unable to open file!");
+			fwrite($myfile,$data);
+			fclose($myfile);
+		
+			
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
 			$ch = curl_init($url);
